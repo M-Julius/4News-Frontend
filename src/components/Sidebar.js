@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SimpleBar from 'simplebar-react';
 import { useLocation } from "react-router-dom";
 import { CSSTransition } from 'react-transition-group';
@@ -12,15 +12,21 @@ import { Routes } from "../routes";
 // import ThemesbergLogo from "../assets/img/themesberg.svg";
 import ReactHero from "../assets/img/technologies/react-hero-logo.svg";
 import ProfilePicture from "../assets/img/team/profile-picture-3.jpg";
+import { BASE_URL } from "../constant/config";
 
 export default (props = {}) => {
   const location = useLocation();
   const { pathname } = location;
   const [show, setShow] = useState(false);
+  const [user, setUser] = React.useState({});
+  const storageUser = localStorage.getItem("user")
   const showClass = show ? "show" : "";
 
   const onCollapse = () => setShow(!show);
 
+  useEffect(() => {
+    setUser(JSON.parse(storageUser));
+  }, [storageUser]);
   // const CollapsableNavItem = (props) => {
   //   const { eventKey, title, icon, children = null } = props;
   //   const defaultKey = pathname.indexOf(eventKey) !== -1 ? eventKey : "";
@@ -83,10 +89,10 @@ export default (props = {}) => {
             <div className="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
               <div className="d-flex align-items-center">
                 <div className="user-avatar lg-avatar me-4">
-                  <Image src={ProfilePicture} className="card-img-top rounded-circle border-white" />
+                  <Image src={`${BASE_URL}/uploads/users/${user.image_profile}`} className="card-img-top rounded-circle border-white" />
                 </div>
                 <div className="d-block">
-                  <h6>Hi, Jane</h6>
+                  <h6>{user?.name ?? ''}</h6>
                   <Button as={Link} variant="secondary" size="xs" to={Routes.Signin.path} className="text-dark">
                     <FontAwesomeIcon icon={faSignOutAlt} className="me-2" /> Sign Out
                   </Button>
