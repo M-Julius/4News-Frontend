@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { Form, Button, Card, Col, Row, Breadcrumb } from '@themesberg/react-bootstrap';
+import { Form, Button, Card, Col, Row, Breadcrumb } from 'react-bootstrap';
 import axiosInstance from '../../../services/axiosIntance';
 import { Routes } from '../../../routes';
 import { Alert } from 'react-bootstrap';

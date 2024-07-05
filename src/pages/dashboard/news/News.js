@@ -20,7 +20,7 @@ import {
   Table,
   Nav,
   Pagination,
-} from "@themesberg/react-bootstrap";
+} from "react-bootstrap";
 
 import { Routes } from "../../../routes";
 import axiosInstance from "../../../services/axiosIntance";

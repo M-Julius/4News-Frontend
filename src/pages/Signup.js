@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faUnlockAlt, faUser } from "@fortawesome/free-solid-svg-icons";
-import { Col, Row, Form, Card, Button, FormCheck, Container, InputGroup, Alert } from '@themesberg/react-bootstrap';
+import { Col, Row, Form, Card, Button, FormCheck, Container, InputGroup, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import { Routes } from "../routes";
@@ -15,6 +15,11 @@ export default ({history}) => {
   const [alert, setAlert] = useState({ type: '', message: '', show: false });
 
   const onRegister = (values) => {
+    if(data.password !== data.confirmPassword) {
+      setAlert({ type: 'danger', message: 'Password and Confirm Password are not same.', show: true });
+      return;
+    }
+    
     values.preventDefault();
 
     const formData = new FormData();

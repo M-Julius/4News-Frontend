@@ -8,7 +8,7 @@ import {
     Row,
     Image,
     Breadcrumb,
-} from "@themesberg/react-bootstrap";
+} from "react-bootstrap";
 import axiosInstance from "../../../services/axiosIntance";
 import { Routes } from "../../../routes";
 import { BASE_URL } from "../../../constant/config";

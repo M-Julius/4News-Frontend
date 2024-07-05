@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Form, Button, Card, Col, Row, Breadcrumb, Image } from '@themesberg/react-bootstrap';
+import { Form, Button, Card, Col, Row, Breadcrumb, Image } from 'react-bootstrap';
 import axiosInstance from '../../../services/axiosIntance';
 import { Routes } from '../../../routes';
 import { Alert } from 'react-bootstrap';

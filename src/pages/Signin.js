@@ -37,6 +37,8 @@ export default ({ history }) => {
       setAlert({ type: 'danger', message: 'Login failed, please check your email or password!.', show: true });
     });
   };
+
+  
   return (
     <main>
       <section className="d-flex align-items-center my-5 mt-lg-6 mb-lg-5">

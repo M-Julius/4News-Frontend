@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp, faChartArea, faChartBar, faChartLine, faFlagUsa, faFolderOpen, faGlobeEurope, faPaperclip, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { faAngular, faBootstrap, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
-import { Col, Row, Card, Image, Button, ListGroup, ProgressBar } from '@themesberg/react-bootstrap';
+import { Col, Row, Card, Image, Button, ListGroup, ProgressBar } from 'react-bootstrap';
 import { CircleChart, BarChart, SalesValueChart, SalesValueChartphone } from "./Charts";
 
 import Profile1 from "../assets/img/team/profile-picture-1.jpg";
@@ -85,12 +85,14 @@ export const CounterWidget = (props) => {
               <h5>{category}</h5>
               <h3 className="mb-1">{title}</h3>
             </div>
-            <small>{period}, <FontAwesomeIcon icon={faGlobeEurope} size="xs" /> WorldWide</small>
+            <small>
+
+            </small>
             <div className="small mt-2">
-              <FontAwesomeIcon icon={percentageIcon} className={`${percentageColor} me-1`} />
+              {/* <FontAwesomeIcon icon={percentageIcon} className={`${percentageColor} me-1`} /> */}
               <span className={`${percentageColor} fw-bold`}>
-                {percentage}%
-              </span> Since last month
+                updated
+              </span> 
             </div>
           </Col>
         </Row>
